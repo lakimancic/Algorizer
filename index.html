@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Algorithms</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="header" onclick="toUrl('index.html')">
+      Algorizer
+    </div>
+    <div class="content">
+      <div class="subtitle">
+        Algorithms
+      </div>
+      <div class="select" onclick="toUrl('searching/index.html')">
+        <p>Searching</p>
+      </div>
+      <div class="select" onclick="toUrl('sorting/index.html')">
+        <p>Sorting</p>
+      </div>
+      <div class="select" onclick="toUrl('pathfinding/index.html')">
+        <p>Path Finding</p>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+  function toUrl(url) {
+    window.location.href = url;
+  }
+  </script>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Algorithms</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="header" onclick="toUrl('../index.html')">
+      Algorizer<br>
+      <span style="font-size: 22pt">~ Searching Algorithms ~</span>
+    </div>
+    <div class="radiobuttons">
+      <div class="label">
+        <p>Select Algorithm:</p>
+      </div>
+      <div class="forselect" id="lin" onclick="changeIndex(this)"><p>Linear Search</p></div>
+      <div class="forselect" id="bin" onclick="changeIndex(this)"><p>Binary Search</p></div>
+      <div class="forselect" id="jump" onclick="changeIndex(this)"><p>Jump Search</p></div>
+      <div class="forselect disabled" id="inter" onclick="//changeIndex(this)"><p>Interpolation Search</p></div>
+      <div class="forselect" id="exp" onclick="changeIndex(this)"><p>Exponential Search</p></div>
+    </div>
+    <div class="input">
+      <input id="num" type="number" name="" value="" placeholder="Enter size of array">
+      <button onclick="drawNewArr(false)">Create Random Array</button>
+      <button onclick="drawNewArr(true)">Create Sorted Array</button>
+      <input id="find" type="number" name="" value="" placeholder="Find...">
+      <button id="startBtn" onclick="startParsing()" disabled>Start</button>
+      <button id="stopBtn" onclick="stopParsing()" disabled>Stop</button>
+      <button id="resetBtn" onclick="resetParsing()" disabled>Reset</button>
+    </div>
+    <div class="slidecontainer">
+      <p>Speed:</p>
+      <input type="range" min="10" max="100" value="55" class="slider" id="myRange">
+      <p id="spd_val">55</p>
+    </div>
+    <div class="legend">
+      <div class="square" style="background: #33cc33"></div>
+      <div class="text">Found</div>
+      <div class="square" style="background: #cc0000"></div>
+      <div class="text">Not Found</div>
+      <div class="square" style="background: #ffd11a"></div>
+      <div class="text">Current</div>
+      <div class="square" style="background: #1a75ff"></div>
+      <div class="text">Normal</div>
+      <div class="square" style="background: #8c8c8c"></div>
+      <div class="text">Not Found ( Passive )</div>
+    </div>
+    <div class="edit">
+      <p>Message</p>
+    </div>
+    <div id="visual">
+    </div>
+  </body>
+  <script type="text/javascript" src="../universal.js"></script>
+  <script type="text/javascript" src="searching.js"></script>
+  <script type="text/javascript">
+  function toUrl(url) {
+    window.location.href = url;
+  }
+  </script>
+</html>

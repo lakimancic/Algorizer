@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Algorithms</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="header" onclick="toUrl('../index.html')">
+      Algorizer<br>
+      <span style="font-size: 22pt">~ Pathfinding Algorithms ~</span>
+    </div>
+    <div class="radiobuttons">
+      <div class="label">
+        <p>Select Algorithm:</p>
+      </div>
+      <div class="forselect" id="bfs" onclick="changeIndex(this)"><p>Breadth-First Search</p></div>
+      <div class="forselect" id="dfs" onclick="changeIndex(this)"><p>Depth-First Search</p></div>
+      <div class="forselect" id="dij" onclick="changeIndex(this)"><p>Dijkstra's Algorithm</p></div>
+      <div class="forselect" id="aa" onclick="changeIndex(this)"><p>A* Search</p></div>
+    </div>
+    <div class="input">
+      <button id="mazeBtn" onclick="generateMaze()">Generate Random Maze</button>
+      <button id="clearBtn" onclick="createTable()">Clear Board</button>
+      <button id="startBtn" onclick="startParsing()">Start</button>
+      <button id="stopBtn" onclick="stopParsing()" disabled>Stop</button>
+    </div>
+    <div class="slidecontainer">
+      <p>Speed:</p>
+      <input type="range" min="10" max="100" value="55" class="slider" id="myRange">
+      <p id="spd_val">55</p>
+    </div>
+    <div class="radios">
+      <label class="rcontainer">Start Node<div class="square" style="background: #33cc33"></div>
+        <input type="radio" checked="checked" name="node" value="start">
+        <span class="rcheckmark"></span>
+      </label>
+      <label class="rcontainer">End Node<div class="square" style="background: #cc0000"></div>
+        <input type="radio" name="node" value="end">
+        <span class="rcheckmark"></span>
+      </label>
+      <label class="rcontainer">Wall Node<div class="square" style="background: #005ce6"></div>
+        <input type="radio" name="node" value="wall">
+        <span class="rcheckmark"></span>
+      </label>
+      <label class="rcontainer">Current/Path Node<div class="square" style="background: #ffff66"></div>
+      </label>
+      <label class="rcontainer">Visited Node<div class="square" style="background: #1a75ff"></div>
+      </label>
+      <label class="rcontainer">Unvisited Node<div class="square" style="border: 1px solid #b3d9ff; background: white"></div>
+      </label>
+    </div>
+    <div class="edit">
+      <p>Message</p>
+    </div>
+    <table id="maze">
+    </table>
+  </body>
+  <script type="text/javascript" src="../universal.js"></script>
+  <script type="text/javascript" src="pathfinding.js"></script>
+  <script type="text/javascript">
+  function toUrl(url) {
+    window.location.href = url;
+  }
+  </script>
+</html>
